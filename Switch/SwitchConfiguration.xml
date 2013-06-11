@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<SwitchConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EnableSwitchBetweenInterfaceAndImplementation>true</EnableSwitchBetweenInterfaceAndImplementation>
+  <EnableSwitchBetweenDesignerAndCodeBehind>true</EnableSwitchBetweenDesignerAndCodeBehind>
+  <ExtensionSwitches>
+    <ExtensionSwitch from="c" to="h" />
+    <ExtensionSwitch from="cpp" to="h" />
+    <ExtensionSwitch from="cxx" to="h" />
+    <ExtensionSwitch from="h" to="c" />
+    <ExtensionSwitch from="h" to="cpp" />
+    <ExtensionSwitch from="h" to="cxx" />
+    <ExtensionSwitch from="xaml" to="xaml.cs" />
+    <ExtensionSwitch from="xaml.cs" to="xaml" />
+    <ExtensionSwitch from="master" to="master.cs" />
+    <ExtensionSwitch from="master.cs" to="master.designer.cs" />
+    <ExtensionSwitch from="master.designer.cs" to="master" />
+    <ExtensionSwitch from="asax" to="asax.cs" />
+    <ExtensionSwitch from="asax.cs" to="asax" />
+    <ExtensionSwitch from="aspx" to="aspx.cs" />
+    <ExtensionSwitch from="aspx.cs" to="aspx.designer.cs" />
+    <ExtensionSwitch from="aspx.designer.cs" to="aspx" />
+  </ExtensionSwitches>
+</SwitchConfiguration>
