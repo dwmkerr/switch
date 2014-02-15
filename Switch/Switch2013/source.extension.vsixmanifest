@@ -4,6 +4,8 @@
     <Identity Id="49263471-5d3f-45ce-866a-2b12a10310ec" Version="1.0" Language="en-US" Publisher="Dave Kerr" />
     <DisplayName>Switch</DisplayName>
     <Description>Switch is an extension for Visual Studio that lets you quickly switch  between related files, such as cpp/h or code-behind and designer.</Description>
+    <MoreInfo>http://www.dwmkerr.com/switch</MoreInfo>
+    <Icon>Resources\Package.ico</Icon>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="12.0" />

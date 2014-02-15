@@ -4,6 +4,7 @@ New-Item -path '.\Deploy' -type directory -force
 New-Item -path '.\Deploy\Visual Studio 2008\Addins\en-US' -type directory -force
 New-Item -path '.\Deploy\Visual Studio 2010\Addins\en-US' -type directory -force
 New-Item -path '.\Deploy\Visual Studio 2012\Addins\en-US' -type directory -force
+New-Item -path '.\Deploy\Visual Studio 2013' -type directory -force
 
 # Copy over the core binaries.
 Copy-Item -Path '.\Switch2008\bin\Release\Switch2008.dll' -Destination '.\Deploy\Visual Studio 2008\Addins' -Force
@@ -19,6 +20,7 @@ Copy-Item -Path '.\SwitchConfiguration.xml' -Destination '.\Deploy\Visual Studio
 Copy-Item -Path '.\Switch2008\Switch2008.AddIn' -Destination '.\Deploy\Visual Studio 2008\Addins' -Force
 Copy-Item -Path '.\Switch2010\Switch2010.AddIn' -Destination '.\Deploy\Visual Studio 2010\Addins' -Force
 Copy-Item -Path '.\Switch2012\Switch2012.AddIn' -Destination '.\Deploy\Visual Studio 2012\Addins' -Force
+Copy-Item -Path '.\Switch2013\bin\Package' -r -Destination '.\Deploy\Visual Studio 2013' -Force
 
 # Generate the resources
 Start-Process -FilePath 'C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\resgen.exe' -ArgumentList "Resources.resx Resources.Resources" -WorkingDirectory '.\Switch2008\' -Wait
