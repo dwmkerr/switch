@@ -3,7 +3,7 @@ Switch
 
 Switch is an Addin for Visual Studio that lets you quickly switch between related files, such as *.cpp and *.h or XAML and code-behind.
 
-![Switch](https://github.com/dwmkerr/switch/blob/master/Switch/Assets/Preview.png "Switch")
+![Switch](Switch/Assets/Preview.png "Switch")
 
 Switch is an extension for Visual Studio that allows you to switch between C++ source and header files, WinForms code and designer, XAML and codebehind and more. With one button press, or keyboard shortcut, you can easily flick between related files.
 
