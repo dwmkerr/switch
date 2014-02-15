@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="49263471-5d3f-45ce-866a-2b12a10310ec" Version="1.0" Language="en-US" Publisher="Dave Kerr" />
+    <Identity Id="49263471-5d3f-45ce-866a-2b12a10310ec" Version="2.1" Language="en-US" Publisher="Dave Kerr" />
     <DisplayName>Switch</DisplayName>
     <Description>Switch is an extension for Visual Studio that lets you quickly switch  between related files, such as cpp/h or code-behind and designer.</Description>
     <MoreInfo>http://www.dwmkerr.com/switch</MoreInfo>
