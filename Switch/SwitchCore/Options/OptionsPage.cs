@@ -97,7 +97,7 @@ namespace SwitchCore.Options
                 return;
 
             //  Reset to default.
-            SwitchAddin.Instance.CreateDefaultConfiguration();
+            SwitchAddin.Instance.LoadDefaultConfiguration();
             SwitchAddin.Instance.SaveConfiguration();
             FromModel(SwitchAddin.Instance.Configuration);
         }

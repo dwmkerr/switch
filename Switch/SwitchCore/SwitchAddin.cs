@@ -125,21 +125,11 @@ namespace SwitchCore
         {
             if (commandName == GetQualifiedCommandName(Command_Switch_Name))
             {
-                ExecuteSwitchCommand();
+                SwitchCommand.Execute(applicationObject, Configuration);
                 return true;
             }
 
             return false;
-        }
-
-        private void ExecuteSwitchCommand()
-        {
-            //  If we have no application or no document, we're done here.
-            if (applicationObject == null || applicationObject.ActiveDocument == null)
-                return;
-            foreach (var target in BuildSwitchTargets())
-                if (target.DoSwitch(applicationObject, applicationObject.ActiveDocument))
-                    break;
         }
 
         /// <summary>
@@ -168,15 +158,11 @@ namespace SwitchCore
         }
 
         /// <summary>
-        /// Gets the switch configuration path.
+        /// Resets the addin to the default configuration.
         /// </summary>
-        /// <returns></returns>
-        private static string GetSwitchConfigurationPath()
+        public void LoadDefaultConfiguration()
         {
-            return Path.Combine(
-                Path.GetDirectoryName(typeof (SwitchConfiguration).Assembly.Location),
-                @"SwitchConfiguration.xml");
-
+            Configuration = SwitchConfigurationManager.CreateDefaultConfiguration();
         }
 
         /// <summary>
@@ -184,20 +170,9 @@ namespace SwitchCore
         /// </summary>
         public void LoadConfiguration()
         {
-            if (!File.Exists(GetSwitchConfigurationPath()))
-            {
-                CreateDefaultConfiguration();
-                return;
-            }
-
-            //  Open the file.
             try
             {
-                using (var stream = new FileStream(GetSwitchConfigurationPath(), FileMode.Open, FileAccess.Read))
-                {
-                    var serailzier = new XmlSerializer(typeof (SwitchConfiguration));
-                    Configuration = (SwitchConfiguration) serailzier.Deserialize(stream);
-                }
+                Configuration = SwitchConfigurationManager.LoadConfiguration();
             }
             catch (Exception exception)
             {
@@ -213,65 +188,12 @@ namespace SwitchCore
             //  Create the file.
             try
             {
-                using (var stream = new FileStream(GetSwitchConfigurationPath(), FileMode.Create, FileAccess.Write))
-                {
-                    var serailzier = new XmlSerializer(typeof(SwitchConfiguration));
-                    serailzier.Serialize(stream, Configuration);
-                }
+                SwitchConfigurationManager.SaveConfiguration(Configuration);
             }
             catch (Exception exception)
             {
                 HandleException(@"Failed to load the configuration for the Switch addin.", exception);
             }
-        }
-
-        /// <summary>
-        /// Creates the default configuration.
-        /// </summary>
-        public void CreateDefaultConfiguration()
-        {
-            Configuration = new SwitchConfiguration
-                {
-                    EnableSwitchBetweenDesignerAndCodeBehind = true,
-                    EnableSwitchBetweenInterfaceAndImplementation = true,
-                    ExtensionSwitches = new List<ExtensionSwitch>()
-                };
-            
-            //  C/C++ extensions.
-            Configuration.ExtensionSwitches.Add(new ExtensionSwitch("c", "h"));
-            Configuration.ExtensionSwitches.Add(new ExtensionSwitch("cpp", "h"));
-            Configuration.ExtensionSwitches.Add(new ExtensionSwitch("cxx", "h"));
-            Configuration.ExtensionSwitches.Add(new ExtensionSwitch("h", "c"));
-            Configuration.ExtensionSwitches.Add(new ExtensionSwitch("h", "cpp"));
-            Configuration.ExtensionSwitches.Add(new ExtensionSwitch("h", "cxx"));
-
-            //  Add the XAML extensions.
-            Configuration.ExtensionSwitches.Add(new ExtensionSwitch("xaml", "xaml.cs"));
-            Configuration.ExtensionSwitches.Add(new ExtensionSwitch("xaml.cs", "xaml"));
-
-            //  Add the ASPX extensions.
-            Configuration.ExtensionSwitches.Add(new ExtensionSwitch("master", "master.cs"));
-            Configuration.ExtensionSwitches.Add(new ExtensionSwitch("master.cs", "master.designer.cs"));
-            Configuration.ExtensionSwitches.Add(new ExtensionSwitch("master.designer.cs", "master"));
-            Configuration.ExtensionSwitches.Add(new ExtensionSwitch("asax", "asax.cs"));
-            Configuration.ExtensionSwitches.Add(new ExtensionSwitch("asax.cs", "asax"));
-            Configuration.ExtensionSwitches.Add(new ExtensionSwitch("aspx", "aspx.cs"));
-            Configuration.ExtensionSwitches.Add(new ExtensionSwitch("aspx.cs", "aspx.designer.cs"));
-            Configuration.ExtensionSwitches.Add(new ExtensionSwitch("aspx.designer.cs", "aspx"));
-        }
-
-        /// <summary>
-        /// Builds the switch targets.
-        /// </summary>
-        /// <returns></returns>
-        private IEnumerable<ISwitchTarget> BuildSwitchTargets()
-        {
-            if(Configuration.EnableSwitchBetweenDesignerAndCodeBehind)
-                yield return new DesignViewSwitchTarget();
-            if(Configuration.EnableSwitchBetweenInterfaceAndImplementation)
-                yield return new InterfaceSwitchTarget();
-            foreach(var extensionSwitch in Configuration.ExtensionSwitches)
-                yield return new ExtensionSwitchTarget(extensionSwitch.From, extensionSwitch.To);
         }
 
         /// <summary>
@@ -284,7 +206,6 @@ namespace SwitchCore
         {
             get { return instance; }
         }
-
 
         /// <summary>
         /// The singleton instance.

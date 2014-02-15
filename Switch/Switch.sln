@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Switch2008", "Switch2008\Switch2008.csproj", "{2D93A974-F06A-4A49-82AC-D385D82A7A6A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Switch2010", "Switch2010\Switch2010.csproj", "{2E9BD3F4-AC0A-4699-8400-794032211965}"
@@ -9,8 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Switch2012", "Switch2012\Sw
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Shared", "0. Shared", "{5302E407-C204-4D95-B3A0-62CDBF7DE023}"
 	ProjectSection(SolutionItems) = preProject
+		IntegrationTests.testsettings = IntegrationTests.testsettings
 		SharedAssemblyInfo.cs = SharedAssemblyInfo.cs
 		SwitchConfiguration.xml = SwitchConfiguration.xml
+		UnitTests.testsettings = UnitTests.testsettings
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Addins", "1. Addins", "{137A86BB-BA01-44E0-9205-D7886C80B8A2}"
@@ -23,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{2C8C8D
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Switch2013", "Switch2013\Switch2013.csproj", "{C898B58C-ABB2-41DE-B42A-B748079B28C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -143,6 +149,31 @@ Global
 		{B9B5909E-E320-4431-9620-92E1C99008AB}.SingleImage|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{B9B5909E-E320-4431-9620-92E1C99008AB}.SingleImage|Mixed Platforms.Build.0 = Release|Any CPU
 		{B9B5909E-E320-4431-9620-92E1C99008AB}.SingleImage|x86.ActiveCfg = Release|Any CPU
+		{C898B58C-ABB2-41DE-B42A-B748079B28C4}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{C898B58C-ABB2-41DE-B42A-B748079B28C4}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{C898B58C-ABB2-41DE-B42A-B748079B28C4}.CD_ROM|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C898B58C-ABB2-41DE-B42A-B748079B28C4}.CD_ROM|Mixed Platforms.Build.0 = Release|Any CPU
+		{C898B58C-ABB2-41DE-B42A-B748079B28C4}.CD_ROM|x86.ActiveCfg = Release|Any CPU
+		{C898B58C-ABB2-41DE-B42A-B748079B28C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C898B58C-ABB2-41DE-B42A-B748079B28C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C898B58C-ABB2-41DE-B42A-B748079B28C4}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C898B58C-ABB2-41DE-B42A-B748079B28C4}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{C898B58C-ABB2-41DE-B42A-B748079B28C4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C898B58C-ABB2-41DE-B42A-B748079B28C4}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{C898B58C-ABB2-41DE-B42A-B748079B28C4}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{C898B58C-ABB2-41DE-B42A-B748079B28C4}.DVD-5|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C898B58C-ABB2-41DE-B42A-B748079B28C4}.DVD-5|Mixed Platforms.Build.0 = Debug|Any CPU
+		{C898B58C-ABB2-41DE-B42A-B748079B28C4}.DVD-5|x86.ActiveCfg = Debug|Any CPU
+		{C898B58C-ABB2-41DE-B42A-B748079B28C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C898B58C-ABB2-41DE-B42A-B748079B28C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C898B58C-ABB2-41DE-B42A-B748079B28C4}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C898B58C-ABB2-41DE-B42A-B748079B28C4}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{C898B58C-ABB2-41DE-B42A-B748079B28C4}.Release|x86.ActiveCfg = Release|Any CPU
+		{C898B58C-ABB2-41DE-B42A-B748079B28C4}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{C898B58C-ABB2-41DE-B42A-B748079B28C4}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{C898B58C-ABB2-41DE-B42A-B748079B28C4}.SingleImage|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C898B58C-ABB2-41DE-B42A-B748079B28C4}.SingleImage|Mixed Platforms.Build.0 = Release|Any CPU
+		{C898B58C-ABB2-41DE-B42A-B748079B28C4}.SingleImage|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -151,5 +182,6 @@ Global
 		{2E9BD3F4-AC0A-4699-8400-794032211965} = {137A86BB-BA01-44E0-9205-D7886C80B8A2}
 		{54C786E5-FD14-4036-92AE-E9F25B71534B} = {137A86BB-BA01-44E0-9205-D7886C80B8A2}
 		{2D93A974-F06A-4A49-82AC-D385D82A7A6A} = {137A86BB-BA01-44E0-9205-D7886C80B8A2}
+		{C898B58C-ABB2-41DE-B42A-B748079B28C4} = {137A86BB-BA01-44E0-9205-D7886C80B8A2}
 	EndGlobalSection
 EndGlobal
