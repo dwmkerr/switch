@@ -1,6 +1,8 @@
 Switch
 ======
 
+[![GuardRails badge](https://badges.production.guardrails.io/dwmkerr/switch.svg)](https://www.guardrails.io)
+
 Switch is an Addin for Visual Studio that lets you quickly switch between related files, such as *.cpp and *.h or XAML and code-behind.
 
 ![Switch](Switch/Assets/Preview.png "Switch")
